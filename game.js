@@ -75,13 +75,21 @@ function checkAnswer(currentLevel){
       }
     }
     else{
+
       console.log("Wrong");
       playSound("wrong");
-      $("#level-title").text("Game Over! Press any key to restart");
+      $("#level-title").text("Game Over! Press any key to restart"); //Game over text
       var gameoverAnim = $("body").addClass("game-over");
       setTimeout(function(){
         gameoverAnim.removeClass("game-over");
       }, 100);
-
+      startOver();
     }
+}
+
+
+function startOver(){
+  level = 0;
+  gamePattern = [];
+  started = false;
 }
